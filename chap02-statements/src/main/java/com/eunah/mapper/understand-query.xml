@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment/>
+    <!-- 급여를 가장 많이 받는 사원의 정보(아이디, 이름, 핸드폰, 급여) 출력 -->
+    <entry key="SalaryTop">
+        SELECT
+        EMP_ID, EMP_NAME, PHONE, SALARY
+        FROM
+        EMPLOYEE
+        ORDER BY SALARY DESC LIMIT 1
+    </entry>
+
+    <!-- 선동일 사원의 사번,이름,핸드폰,직급 출력 -->
+    <entry key="MrSun">
+        SELECT
+        E.EMP_ID, E.EMP_NAME, E.PHONE, J.JOB_NAME
+        FROM
+        EMPLOYEE E
+        JOIN
+        JOB J ON E.JOB_CODE = J.JOB_CODE
+        WHERE
+        EMP_NAME = '선동일'
+    </entry>
+
+</properties>
